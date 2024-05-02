@@ -15,6 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag nginx:from_git
+      run: docker build --no-cache . --file Dockerfile --tag nginx:from_git
     - name: Push docker image to my repo
       run: docker login -u prasanthk2002 -p ${{ secrets.docker_token }} && docker push nginx:from_git && docker logout

@@ -17,4 +17,4 @@ jobs:
     - name: Build the Docker image
       run: docker build --no-cache . --file Dockerfile --tag nginx:from_git
     - name: Push docker image to my repo
-      run: docker login -u prasanthk2002 --password 'samsung@50' && docker push nginx:from_git
+      run: echo "samsung@50" | docker login -u prasanthk2002 --password-stdin && docker push nginx:from_git
